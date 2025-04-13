@@ -17,9 +17,10 @@ This is my personalized startpage, designed to be my browser homepage. It includ
 The following keyboard shortcuts are available on the search page:
 
 - **Escape**: Hide the settings panel.
-- **Alt + Space**: Focus on the search input field.
+- **Ctrl + Space**: Focus on the search input field.
+- **Escape**: Unfocus the search input field.
 - **Enter**: Execute the search.
-- **Ctrl + C**: Clear the search input field.
+- **Ctrl + Backspace || Ctrl + Delete**: Clear the search input field.
 
 ## Contribute
 
@@ -38,5 +39,5 @@ If you want to make any change, follow these steps:
 This project is licensed under the GPL-3.0 License. See the [LICENSE](LICENSE) file for more details.
 
 ## Credits
-
+- Inspired from [Druxorey Startpage](https://github.com/druxorey/startpage).
 - Inspired from [Fxzii Startpage](https://github.com/Fxzzi/startpage).
