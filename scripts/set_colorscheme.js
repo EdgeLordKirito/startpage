@@ -1,29 +1,45 @@
 var colorschemeList = {
-    "dracula-dark": {
+    "nino": {
         '--color-foreground-1': '#F8F8F2',
         '--color-foreground-2': '#B9BBCB',
         '--color-background-1': '#44475A',
         '--color-background-2': '#282A36',
         '--color-background-3': '#21222C',
-        '--color-accent-1': '#BD93F9',
-        '--color-accent-2': '#BD93F933',
+        '--color-accent-1': '#EC6D8E',
+        '--color-accent-2': '#EC6D8E33',
         '--color-shadow-1': '#21222C',
-        '--color-shadow-2': '#D6ACFF',
+        '--color-shadow-2': '#FDC2C4',
 		'--button-inactive': 'invert(25%) sepia(9%) saturate(1455%) hue-rotate(194deg) brightness(93%) contrast(82%)',
-		'--button-active': 'invert(68%) sepia(92%) saturate(2532%) hue-rotate(213deg) brightness(101%) contrast(103%)',
+		'--button-active': 'invert(70%) sepia(15%) saturate(1400%) hue-rotate(300deg) brightness(106%) contrast(88%)',
+		'image': 'static/images/nino.webp',
     },
-    "dracula-light": {
-        '--color-foreground-1': '#44475A',
-        '--color-foreground-2': '#353747',
-        '--color-background-1': '#C4C7D4',
-        '--color-background-2': '#F3F4F6',
-        '--color-background-3': '#DCDDE5',
-        '--color-accent-1': '#BD93F9',
-        '--color-accent-2': '#BD93F933',
-        '--color-shadow-1': '#B2B5C2',
-        '--color-shadow-2': '#D6ACFF',
-		'--button-inactive': 'invert(87%) sepia(10%) saturate(225%) hue-rotate(191deg) brightness(92%) contrast(88%)',
+	"raiden": {
+        '--color-foreground-1': '#FDF4EE',
+        '--color-foreground-2': '#9B969C',
+        '--color-background-1': '#322F54',
+        '--color-background-2': '#282644',
+        '--color-background-3': '#23202E',
+        '--color-accent-1': '#C8ACF8',
+        '--color-accent-2': '#C8ACF833',
+        '--color-shadow-1': '#252123',
+        '--color-shadow-2': '#5756A1',
+		'--button-inactive': 'invert(35%) sepia(9%) saturate(1455%) hue-rotate(194deg) brightness(93%) contrast(82%)',
 		'--button-active': 'invert(68%) sepia(92%) saturate(2532%) hue-rotate(213deg) brightness(101%) contrast(103%)',
+		'image': 'static/images/raiden.webp',
+    },
+    "acheron": {
+        '--color-foreground-1': '#22242C',
+        '--color-foreground-2': '#18191E',
+        '--color-background-1': '#ECEDEC',
+        '--color-background-2': '#C3C2C0',
+        '--color-background-3': '#AFAFAE',
+        '--color-accent-1': '#DB334F',
+        '--color-accent-2': '#DB334F33',
+        '--color-shadow-1': '#8E8A93',
+        '--color-shadow-2': '#E1E1E0',
+		'--button-inactive': 'invert(30%) sepia(10%) saturate(225%) hue-rotate(191deg) brightness(92%) contrast(88%)',
+		'--button-active': 'invert(30%) sepia(50%) saturate(2532%) hue-rotate(320deg) brightness(101%) contrast(103%)',
+		'image': 'static/images/acheron.webp',
     },
     "edge": {
         '--color-foreground-1': '#F8F8F8',
@@ -37,6 +53,7 @@ var colorschemeList = {
         '--color-shadow-2': '#B9B9B9',
 		'--button-inactive': 'invert(44%) sepia(1%) saturate(0%) hue-rotate(105deg) brightness(93%) contrast(95%)',
 		'--button-active': 'invert(83%) sepia(3%) saturate(26%) hue-rotate(41deg) brightness(104%) contrast(80%)',
+		'image': 'static/images/img2.webp',
     },
     "gruvbox": {
         '--color-foreground-1': '#D4BE98',
@@ -59,7 +76,16 @@ function changeColorScheme() {
     var selectedScheme = colorschemeList[colorscheme.value];
 
     for (var property in selectedScheme) {
+        if (property === 'image') {
+            continue;
+        }
         root.style.setProperty(property, selectedScheme[property]);
+    }
+
+    // Set the image
+    const imageElement = document.getElementById("image-display");
+    if (selectedScheme.image && imageElement) {
+        imageElement.src = selectedScheme.image;
     }
 
     localStorage.setItem("selectedColorscheme", colorscheme.value);
@@ -72,10 +98,12 @@ function loadSavedColorscheme() {
     if (savedColorscheme) {
         colorscheme.value = savedColorscheme;
     } else {
-        colorscheme.value = "dracula-dark";
+        colorscheme.value = Object.keys(colorschemeList)[0];;
     }
 
     changeColorScheme();
 }
 
-loadSavedColorscheme();
+document.addEventListener("DOMContentLoaded", function () {
+    loadSavedColorscheme();
+});
