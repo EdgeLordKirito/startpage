@@ -74,34 +74,6 @@ document.addEventListener('keydown', function(event) {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-	const shortcuts = {
-		'Reddit': 'https://reddit.com/',
-		'Daily Dev': 'https://app.daily.dev/',
-		'Modrinth': 'https://modrinth.com/dashboard',
-		'Ivanime': 'https://www.ivanime.com/',
-		'Ditlep': 'https://www.ditlep.com/',
-		'GitHub': 'https://github.com/druxorey',
-		'DevDocs': 'https://devdocs.io/',
-		'W3Schools': 'https://w3schools.com',
-		'Letcode': 'https://leetcode.com/problemset/',
-		'VirusTotal': 'https://www.virustotal.com/gui/home/upload',
-		'Conest': 'https://conest.ciens.ucv.ve/webapp/',
-		'PortalAsig2': 'https://portalasig2.ciens.ucv.ve/#/',
-		'Campus Virtual': 'https://campusvirtualucv.org/ead/login/index.php',
-		'CiensMail': 'https://correo.ciens.ucv.ve',
-		'Geogebra': 'https://www.geogebra.org/calculator',
-		'Dotfiles': 'https://github.com/druxorey/dotfiles',
-		'Arch Wiki': 'https://wiki.archlinux.org/',
-		'Explain Shell': 'https://explainshell.com/#',
-		'Techthings': 'https://www.reddit.com/user/devdruxorey/m/techthings/',
-		'Deepseek': 'https://chat.deepseek.com/',
-		'Calendar': 'https://calendar.google.com/calendar/u/0/r',
-		'Tasks': 'https://tasks.google.com/tasks/',
-		'Todo': 'https://tasks.google.com/tasks/',
-		'Drive': 'https://drive.google.com/drive/my-drive',
-		'Notion': 'https://notion.so/',
-	};
-	
 	function isValidURL(string) {
 		try {
 			new URL(string);
@@ -143,13 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		} else if (isValidURL(query)) {
 			window.location.href = query;
 
-		} else {
-			const shortcut = Object.keys(shortcuts).find(key => key.toLowerCase().includes(query));
-			if (shortcut) {
-				window.location.href = shortcuts[shortcut];
-			} else {
-				window.location.href = `${searchEngine}?q=${encodeURIComponent(query)}`;
-			}
 		}
 	};
 
