@@ -115,6 +115,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		} else if (isValidURL(query)) {
 			window.location.href = query;
 
+		} else {
+			window.location.href = `${searchEngine}?q=${encodeURIComponent(query)}`;
 		}
 	};
 
