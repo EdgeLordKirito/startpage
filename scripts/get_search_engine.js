@@ -96,27 +96,36 @@ document.addEventListener('DOMContentLoaded', function() {
 			const searchQuery = query.substring(2).trim();
 			window.location.href = `https://www.reddit.com/search/?q=${encodeURIComponent(searchQuery)}`;
 
-		} else if (query.startsWith('gh:')) {
-			const searchQuery = query.substring(3).trim();
-			window.location.href = `https://www.github.com/search/?q=${encodeURIComponent(searchQuery)}`;
-			
 		} else if (query.startsWith('g:')) {
 			const searchQuery = query.substring(2).trim();
 			window.location.href = `https://www.google.com/search?q=${encodeURIComponent(searchQuery)}`;
-			
-		} else if (query.startsWith('i:')) {
-			const searchQuery = query.substring(2).trim();
-			window.location.href = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`;
 			
 		} else if (query.startsWith('y:')) {
 			const searchQuery = query.substring(2).trim();
 			window.location.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(searchQuery)}`;
 			
+		} else if (query.startsWith('gi:')) {
+			const searchQuery = query.substring(3).trim();
+			window.location.href = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`;
+			
+		} else if (query.startsWith('bi:')) {
+			const searchQuery = query.substring(3).trim();
+			window.location.href = `https://search.brave.com/images?q=${encodeURIComponent(searchQuery)}`;
+			
+		} else if (query.startsWith('gh:')) {
+			const searchQuery = query.substring(3).trim();
+			window.location.href = `https://www.github.com/search/?q=${encodeURIComponent(searchQuery)}`;
+			
+		} else if (query.startsWith('wol:')) {
+			const searchQuery = query.substring(4).trim();
+			window.location.href = `https://www.wolframalpha.com/input?i=${encodeURIComponent(searchQuery)}`;
+			
 		} else if (isValidURL(query)) {
 			window.location.href = query;
 
-		}
+		} else {
 		window.location.href = `${searchEngine}?q=${encodeURIComponent(query)}`;
+		}
 	};
 
 	document.getElementById('search-input').addEventListener('input', highlightMatchingLinks);
