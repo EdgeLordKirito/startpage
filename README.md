@@ -32,7 +32,7 @@ If you want to make any change, follow these steps:
 4. Make your changes.
 5. Commit your changes, for example: `git commit -m 'fix: incorrect svg path'`.
 6. Push your changes to your forked repository: `git push origin your-branch-name`.
-7. Open a Pull Request in this repository and reference the original issue.
+7. Open a Pull Request in this repository and reference the original issue. 
 
 ## License
 
