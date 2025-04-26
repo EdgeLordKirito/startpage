@@ -382,3 +382,65 @@ li:first-child {
 .sidebar-icon {
     margin-bottom: 1rem; /* Space between icons */
 }
+
+#legal-container {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    height: 1.5rem;
+    width: auto;
+    bottom: 3.5vh;
+    right: 2vw;
+
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+#legal-container a {
+    font-size: 0.7rem;
+	font-weight: bold;	
+    text-decoration: none;
+    color: var(--color-foreground-1);
+    transition: var(--transition-speed) ease;
+}
+
+#legal-container a:hover {
+	font-weight: bold;
+    color: var(--color-accent-1);
+    transition: var(--transition-speed) ease;
+}
+
+#privacy-container {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    height: 1.5rem;
+    width: auto;
+    bottom: 2vh;
+    right: 2vw;
+	
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+#privacy-container a {
+    font-size: 0.7rem;
+	font-weight: bold;	
+    text-decoration: none;
+    color: var(--color-foreground-1);
+    transition: var(--transition-speed) ease;
+}
+
+#privacy-container a:hover {
+	font-weight: bold;
+    color: var(--color-accent-1);
+    transition: var(--transition-speed) ease;
+}
