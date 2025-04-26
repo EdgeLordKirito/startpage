@@ -1,0 +1,76 @@
+:root {
+    --color-foreground-1: #F8F8F2;
+    --color-foreground-2: #B9BBCB;
+
+    --color-background-1: #44475A;
+    --color-background-2: #282A36;
+    --color-background-3: #21222C;
+
+    --color-accent-1: #EC6D8E;
+    --color-accent-2: #EC6D8E33;
+
+    --color-shadow-1: #21222C;
+    --color-shadow-2: #FDC2C4;
+
+    --button-inactive: invert(25%) sepia(9%) saturate(1455%) hue-rotate(194deg) brightness(93%) contrast(82%);
+    --button-active: invert(70%) sepia(15%) saturate(1400%) hue-rotate(300deg) brightness(106%) contrast(88%);
+
+    --transition-speed: 0.25s;
+    --border-radius: 0.75rem;
+}
+
+@font-face {
+    font-family: "default-font";
+    src: url("../fonts/hack.ttf");
+}
+
+* {
+    font-family: 'default-font', sans-serif;
+    font-size: 18px;
+    box-sizing: border-box; /* wichtig damit padding funktioniert */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: block;
+    background: var(--color-background-2);
+    color: var(--color-foreground-1);
+}
+
+#legal-page {
+	padding-left: 30vw;
+    padding-right: 30vw;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    width: 100%;
+}
+
+section {
+    margin-bottom: 4rem;
+    word-wrap: break-word;
+}
+
+h1 {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+a {
+    color: inherit; /* übernimmt die normale Textfarbe */
+    text-decoration: underline; /* immer unterstrichen */
+    transition: var(--transition-speed) ease; /* optional: sanfte Animation beim Hover */
+}
+
+a:visited {
+    color: inherit; /* gleiche Farbe auch nach Besuch */
+}
+
+a:hover {
+    font-weight: bold; /* beim Hover fett */
+    text-decoration: underline; /* unterstrichen bleibt */
+    color: var(--color-accent-1); /* optional: beim Hover Akzentfarbe */
+}
